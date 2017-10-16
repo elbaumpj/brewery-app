@@ -29,6 +29,7 @@ exports.addStore = (req, res) => {
 exports.upload = multer(multerOptions).single('photo'); 
 
 exports.resize = async (req, res, next) => {
+
     //check if there's no new file to resize 
     if(!req.file) {
         next(); 

@@ -7,7 +7,17 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose'); 
 
 const userSchema = new Schema({
-
+    email: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        trim: true,
+        validate: [validator.isEmail, 'Invalid Email Address'],
+        required: 'Please Supply an Email Address'
+    },
+    name: {
+        
+    }
 });
 
 module.exports = mongoose.model('User', userSchema); 

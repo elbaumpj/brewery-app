@@ -58,5 +58,8 @@ authController.confirmedPasswords,
 catchErrors(authController.update)
 ); 
 
+// API
+
+router.get('/api/search', catchErrors(storeController.searchStores)); 
 
 module.exports = router;

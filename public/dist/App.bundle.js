@@ -984,7 +984,15 @@ Object.defineProperty(exports, "__esModule", {
 var axios = __webpack_require__(12);
 
 function typeAhead(search) {
-    console.log(search);
+    if (!search) return;
+
+    var searchInput = search.querySelector('input[name="search"]');
+
+    var searchResults = search.querySelector('.search__results');
+
+    searchInput.on('search', function () {
+        console.log(this.value);
+    });
 }
 
 exports.default = typeAhead;

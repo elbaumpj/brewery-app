@@ -8,6 +8,8 @@ import typeAhead from './modules/typeAhead';
 
 import makeMap from './modules/map'; 
 
+import ajaxHeart from './modules/heart'; 
+
 // functions
 
 autocomplete( $('#address'), $('#lat'), $('#lng')); 
@@ -15,3 +17,6 @@ autocomplete( $('#address'), $('#lat'), $('#lng'));
 typeAhead( $('.search') ); 
 
 makeMap( $('#map') ); 
+
+const heartForms = $$('form.heart'); 
+heartForms.on('submit', ajaxHeart); 

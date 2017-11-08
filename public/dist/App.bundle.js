@@ -1000,19 +1000,21 @@ var _bling = __webpack_require__(1);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ajaxHeart(e) {
+    var _this = this;
+
     e.preventDefault();
-    console.log('heart it!');
+    console.log('HEART ITTT!!!!!!!!!!!!!!!!');
     console.log(this);
-
     _axios2.default.post(this.action).then(function (res) {
-        console.log('post worked', res.data);
-        // const isHearted = this.heart.classList.toggle('heart__button--hearted'); 
-        // $('.heart-count').textContent = res.data.hearts.length; 
-
-        // if(isHearted) {
-        //     this.heart.classList.add('heart__button--float'); 
-        //     setTimeout(() => this.heart.classList.remove('heart__button--float'), 2500); 
-        //}
+        console.log(res.data);
+        var isHearted = _this.heart.classList.toggle('heart__button--hearted');
+        (0, _bling.$)('.heart-count').textContent = res.data.hearts.length;
+        if (isHearted) {
+            _this.heart.classList.add('heart__button--float');
+            setTimeout(function () {
+                return _this.heart.classList.remove('heart__button--float');
+            }, 2500);
+        }
     }).catch(console.error);
 }
 

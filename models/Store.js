@@ -81,7 +81,7 @@ storeSchema.statics.getTagsList = function() {
 
 storeSchema.virtual('reviews', {
     ref: 'Review',
-    localField: 'id', 
+    localField: '_id', 
     foreignField: 'store'
 }); 
 

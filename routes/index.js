@@ -80,4 +80,8 @@ router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.get
 
 router.post('/reviews/:id', authController.isLoggedIn, catchErrors(reviewController.addReview)); 
 
+// top
+
+router.get('/top', catchErrors(storeController.getTopStores)); 
+
 module.exports = router;
